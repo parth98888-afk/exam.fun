@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exam Result Loading... 😭</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f3f3ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #loaderScreen, #finalScreen {
+      text-align: center;
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      width: 330px;
+      display: none;
+    }
+
+    #loaderScreen {
+      display: block;
+    }
+
+    .spinner {
+      width: 45px;
+      height: 45px;
+      border: 5px solid #ccc;
+      border-top-color: #ff7043;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      border: none;
+      background: #ff7043;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255,112,67,0.5);
+    }
+
+    button:hover {
+      background: #ff5722;
+    }
+
+    .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loaderScreen">
+    <div class="spinner"></div>
+    <h2>Result Checking... ⏳</h2>
+    <p style="margin-top: 5px;">
+      Server: "Bhai ruk ja… load to lene de 😭"
+    </p>
+  </div>
+
+  <!-- FINAL SCREEN -->
+  <div id="finalScreen">
+    <div class="emoji">😴📢</div>
+    <h2>Aaj Kuch Exam Nahi Hone Wali!</h2>
+
+    <p style="margin-top: 10px; font-size: 0.95rem;">
+      Itlu refresh karsu toh result j fast nahi aave! <br><br>
+      <strong>Chill karo… doston ke saath masti karo 👀🔥</strong><br><br>
+      System bole: “Bhai tu so ja pehla… baaki badhama.”
+    </p>
+
+    <button onclick="alert('Soya ja bhai 😂 exam to aaje nathi!')">
+      So Jao 😴
+    </button>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("loaderScreen").style.display = "none";
+      document.getElementById("finalScreen").style.display = "block";
+    }, 3500); // 3.5 seconds fake loading
+  </script>
+
+</body>
+</html>
